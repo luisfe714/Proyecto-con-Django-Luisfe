@@ -9,7 +9,7 @@
             <h2>{{article.title}}</h2>
             <p>
                 {% for  category in article.categories.all %}
-                    <a href="#">{{category}}</a>
+                    <a href="{%url 'category' category.id%}">{{category}}</a>
 
                     {% if forloop.counter < article.categories.all|length %} <!--que determine cual es la ultima categoria-->
                         {{'-'}}
