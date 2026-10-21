@@ -3,9 +3,14 @@ from .models import Category, Article
 
 class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',)
+    list_display = ('name', 'created_at')
+    search_fields = ('name', 'created_at')
 
 class ArticleAdmin(admin.ModelAdmin):
-    readonly_fields = ('user', 'created_at', 'update_at')  
+    readonly_fields = ('user', 'created_at', 'update_at')
+    search_fields = ('title', 'content', 'user__username', 'categories__name')
+    list_display = ('title','user', 'public', 'created_at')
+    list_filter = ('public', 'user__username', 'categories__name') #NO se puede poner solo el valor porque esta esperando una tupla
 
     def save_model(self, request, obj, form, change):
         if not obj.user_id:
@@ -15,4 +20,3 @@ class ArticleAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
-
