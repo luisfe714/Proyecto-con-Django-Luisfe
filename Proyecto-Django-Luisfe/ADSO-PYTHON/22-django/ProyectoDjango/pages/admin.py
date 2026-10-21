@@ -3,7 +3,7 @@ from .models import Page
 
 #Configuracion extra
 class PageAdmin(admin.ModelAdmin):
-    readonly_field = ('created_at', 'updated_at')
+    readonly_fields = ('created_at', 'updated_at')
     search_fields = ('title', 'content')
     list_filter = ('visible',) #NO se puede poner solo el valor porque esta esperando una tupla
     list_display = ('title','visible','created_at')

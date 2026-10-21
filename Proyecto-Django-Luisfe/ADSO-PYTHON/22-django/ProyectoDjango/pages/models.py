@@ -11,8 +11,8 @@ class Page(models.Model):#Heredamos de models
     visible = models.BooleanField(verbose_name= "¿Visible?")
     order = models.IntegerField(default=0,verbose_name="Orden")
     #auto_now_add= True para que adicione la fecha de cuando se crea
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name= "Creación:")
-    updated_at = models.DateTimeField(auto_now_add=True, verbose_name= "Actualización:")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name= "Creación")
+    updated_at = models.DateTimeField(auto_now_add=True, verbose_name= "Actualización")
 
     class Meta:
         verbose_name= "Pagina"
