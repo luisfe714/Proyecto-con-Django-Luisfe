@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls), #panel de administracion por defecto
     path('', include('mainapp.urls')),
     path('', include('pages.urls')),
+    path('', include('blog.urls'))
 ]
