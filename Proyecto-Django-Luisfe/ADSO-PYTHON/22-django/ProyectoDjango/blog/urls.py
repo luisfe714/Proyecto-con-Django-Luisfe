@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('articulos/', views.list, name="list_articles"),#Cuando encuentra la ruta inicio
+    path('categoria(<int:category_id>)', views.category, name="category")
 ]

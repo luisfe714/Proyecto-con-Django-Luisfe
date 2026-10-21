@@ -9,3 +9,10 @@ def list(request):
         'title' : 'Articulos',
         'articles' : articles
     })
+
+def category(request, category_id):
+    category = Category.objects.get(id=category_id)
+
+    return render(request, 'categories/category.html', {
+        'category' : category
+    })
